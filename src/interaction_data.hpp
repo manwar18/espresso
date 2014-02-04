@@ -44,6 +44,8 @@
 #define BONDED_IA_ANGLE_OLD     2
 /** Type of bonded interaction is a dihedral potential. */
 #define BONDED_IA_DIHEDRAL  3
+/** Type of bonded interaction is a dihedralcos potential. */
+#define BONDED_IA_DIHEDRALCOS  20
 /** Type of tabulated bonded interaction potential, 
     may be of bond length, of bond angle or of dihedral type. */
 #define BONDED_IA_TABULATED 4
@@ -617,6 +619,14 @@ typedef struct {
       double bend;
       double phase;
     } dihedral;
+
+     /** Parameters for four body angular potential (dihedral-angle potentials). */
+     struct {
+      double bend;
+      double bend1;
+      double bend2;
+    } dihedralcos;
+
 #ifdef TABULATED
     /** Parameters for n-body tabulated potential (n=2,3,4). */
     struct {

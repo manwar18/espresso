@@ -135,6 +135,7 @@ libEspresso_la_SOURCES += \
 	angle_cossquare.cpp angle_cossquare.hpp \
 	angledist.cpp angledist.hpp \
 	dihedral.cpp dihedral.hpp \
+    dihedralcos.cpp dihedralcos.hpp \
 	endangledist.cpp endangledist.hpp \
 	fene.cpp fene.hpp \
 	harmonic.cpp harmonic.hpp \

@@ -80,6 +80,7 @@
 #include "angle_cossquare_tcl.hpp"
 #include "angledist_tcl.hpp"
 #include "dihedral_tcl.hpp"
+#include "dihedralcos_tcl.hpp"
 #include "endangledist_tcl.hpp"
 #include "fene_tcl.hpp"
 #include "overlap_tcl.hpp"
@@ -334,6 +335,11 @@ int tclprint_to_result_BondedIA(Tcl_Interp *interp, int i)
 #endif
   case BONDED_IA_DIHEDRAL:
     return tclprint_to_result_dihedralIA(interp, params);
+   case BONDED_IA_DIHEDRALCOS:
+    return tclprint_to_result_dihedralcosIA(interp, params);
+    
+
+
 #ifdef BOND_ENDANGLEDIST
   case BONDED_IA_ENDANGLEDIST:
     return tclprint_to_result_endangledistIA(interp, params);
@@ -877,6 +883,7 @@ int tclcommand_inter_parse_bonded(Tcl_Interp *interp,
   REGISTER_BONDED("angledist", tclcommand_inter_parse_angledist);
 #endif
   REGISTER_BONDED("dihedral", tclcommand_inter_parse_dihedral);
+  REGISTER_BONDED("dihedralcos", tclcommand_inter_parse_dihedralcos);  
 #ifdef BOND_ENDANGLEDIST
   REGISTER_BONDED("endangledist", tclcommand_inter_parse_endangledist);
 #endif

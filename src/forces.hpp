@@ -70,6 +70,7 @@
 #include "angle_cossquare.hpp"
 #include "angledist.hpp"
 #include "dihedral.hpp"
+#include "dihedralcos.hpp"
 #include "debye_hueckel.hpp"
 #include "endangledist.hpp"
 #include "reaction_field.hpp"
@@ -510,6 +511,9 @@ inline void add_bonded_force(Particle *p1)
 #endif
     case BONDED_IA_DIHEDRAL:
       bond_broken = calc_dihedral_force(p1, p2, p3, p4, iaparams, force, force2, force3);
+      break;
+    case BONDED_IA_DIHEDRALCOS:
+      bond_broken = calc_dihedralcos_force(p1, p2, p3, p4, iaparams, force, force2, force3);
       break;
 #ifdef BOND_CONSTRAINT
     case BONDED_IA_RIGID_BOND:

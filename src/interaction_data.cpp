@@ -399,6 +399,9 @@ static void recalc_maximal_cutoff_bonded()
     case BONDED_IA_DIHEDRAL:
       max_cut_bonded = max_cut_tmp;
       break;
+    case BONDED_IA_DIHEDRALCOS:
+      max_cut_bonded = max_cut_tmp;
+      break;
 #ifdef TABULATED
     case BONDED_IA_TABULATED:
       if(bonded_ia_params[i].p.tab.type == TAB_BOND_DIHEDRAL)
@@ -666,6 +669,8 @@ const char *get_name_of_bonded_ia(int i) {
     return "angledist";
   case BONDED_IA_DIHEDRAL:
     return "dihedral";
+  case BONDED_IA_DIHEDRALCOS:
+    return "dihedralcos";  
   case BONDED_IA_ENDANGLEDIST:
     return "endangledist";
   case BONDED_IA_HARMONIC:
